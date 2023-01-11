@@ -9,6 +9,9 @@ import org.springframework.stereotype.Service;
 public class CustomerService {
 
     public void doSomething(Customer customer) {
-      log.info(customer.toString());
+        log.info(customer.toString());
+        if ("123".equals(customer.getId())) {
+            throw new RuntimeException("There is something invalid in this object");
+        }
     }
 }
