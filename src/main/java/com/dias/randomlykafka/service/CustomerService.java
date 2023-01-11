@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.UUID;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.IntStream;
 
 @Service
@@ -19,7 +20,7 @@ public class CustomerService {
     private final CustomerProducer customerProducer;
 
     public void doSomething(Customer customer) {
-        log.info(customer.toString());
+        //log.info(customer.toString());
         if ("123".equals(customer.getId())) {
             throw new RuntimeException("There is something invalid in this object");
         }
